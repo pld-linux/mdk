@@ -1,3 +1,4 @@
+# TODO: separate gmixvm
 Summary:	GNU MIX Development Kit
 Summary(pl):	GNU MIX Development Kit - zestaw programistyczny dla jêzyka MIXAL
 Name:		mdk
@@ -8,11 +9,14 @@ Group:		Applications
 Source0:	http://ftp.gnu.org/gnu/mdk/v1.2.3/%{name}-%{version}.tar.gz
 # Source0-md5:	1c74ec62c847792706be412289c8152b
 URL:		http://www.gnu.org/software/mdk/mdk.html
-BuildRequires:	automake
-BuildRequires:	gtk+2-devel
+BuildRequires:	glib2-devel >= 2.0
 BuildRequires:	guile-devel
-BuildRequires:	libglade2-devel
-BuildRequires:	pango
+BuildRequires:	pkgconfig
+BuildRequires:	readline-devel
+# for GUI
+BuildRequires:	gtk+2-devel >= 2:2.4.0
+BuildRequires:	libglade2-devel >= 2.0.0
+BuildRequires:	pango-devel >= 1.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
