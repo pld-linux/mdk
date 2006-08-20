@@ -1,5 +1,5 @@
 Summary:	GNU MIX Development Kit
-Summary(pl):	GNU MIX Development Kit
+Summary(pl):	GNU MIX Development Kit - zestaw programistyczny dla jêzyka MIXAL
 Name:		mdk
 Version:	1.2.3
 Release:	0.1
@@ -29,8 +29,19 @@ mixvm, called gmixvm, is provided; and, for Emacs guy, exists emacs
 mode, which allows running mixvm inside an Emacs GUD buffer.
 
 %description -l pl
-MDK dostarcza narzêdzi deweloperskich do pisania i wykonywania
-programów w jêzyku MIXAL na virtualnej maszynie MIX.
+MDK oznacza MIX Development Kit (zestaw programistyczny MIX) i
+dostarcza narzêdzia do tworzenia i wykonywania programów w jêzyku
+MIXAL na wirtualnej maszynie MIX.
+
+MIX to mityczny komputer Donalda Knutha opisany w pierwszej czê¶ci
+"The Art of Computer Programming", któr± programuje siê w jêzyku
+asemblera MIXAL (MIX assembly language).
+
+MDK zawiera asembler MIXAL (mixasm) oraz maszynê wirtualn± MIX (mixvm)
+z interfejsem linii poleceñ. Ponadto dostarczony jest graficzny
+interfejs GTK+ do mixvm o nazwie gmixvm; a dla emacsowców istnieje
+tryb Emacsa pozwalaj±cy na uruchomienie mixvm wewn±trz bufora GUD
+Emacsa.
 
 %prep
 %setup -q
@@ -39,8 +50,7 @@ programów w jêzyku MIXAL na virtualnej maszynie MIX.
 %configure
 %{__make}
 ln -s doc/img
-cd doc
-%{__make} html
+%{__make} -C doc html
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -59,7 +69,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %postun
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
-
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
