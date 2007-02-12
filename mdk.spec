@@ -1,6 +1,6 @@
 # TODO: separate gmixvm
 Summary:	GNU MIX Development Kit
-Summary(pl):	GNU MIX Development Kit - zestaw programistyczny dla jêzyka MIXAL
+Summary(pl.UTF-8):   GNU MIX Development Kit - zestaw programistyczny dla jÄ™zyka MIXAL
 Name:		mdk
 Version:	1.2.3
 Release:	0.1
@@ -32,19 +32,19 @@ MDK includes a MIXAL assembler (mixasm) and a MIX virtual machine
 mixvm, called gmixvm, is provided; and, for Emacs guy, exists emacs
 mode, which allows running mixvm inside an Emacs GUD buffer.
 
-%description -l pl
+%description -l pl.UTF-8
 MDK oznacza MIX Development Kit (zestaw programistyczny MIX) i
-dostarcza narzêdzia do tworzenia i wykonywania programów w jêzyku
+dostarcza narzÄ™dzia do tworzenia i wykonywania programÃ³w w jÄ™zyku
 MIXAL na wirtualnej maszynie MIX.
 
-MIX to mityczny komputer Donalda Knutha opisany w pierwszej czê¶ci
-"The Art of Computer Programming", któr± programuje siê w jêzyku
+MIX to mityczny komputer Donalda Knutha opisany w pierwszej czÄ™Å›ci
+"The Art of Computer Programming", ktÃ³rÄ… programuje siÄ™ w jÄ™zyku
 asemblera MIXAL (MIX assembly language).
 
-MDK zawiera asembler MIXAL (mixasm) oraz maszynê wirtualn± MIX (mixvm)
-z interfejsem linii poleceñ. Ponadto dostarczony jest graficzny
-interfejs GTK+ do mixvm o nazwie gmixvm; a dla emacsowców istnieje
-tryb Emacsa pozwalaj±cy na uruchomienie mixvm wewn±trz bufora GUD
+MDK zawiera asembler MIXAL (mixasm) oraz maszynÄ™ wirtualnÄ… MIX (mixvm)
+z interfejsem linii poleceÅ„. Ponadto dostarczony jest graficzny
+interfejs GTK+ do mixvm o nazwie gmixvm; a dla emacsowcÃ³w istnieje
+tryb Emacsa pozwalajÄ…cy na uruchomienie mixvm wewnÄ…trz bufora GUD
 Emacsa.
 
 %prep
