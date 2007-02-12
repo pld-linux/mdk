@@ -1,6 +1,6 @@
 # TODO: separate gmixvm
 Summary:	GNU MIX Development Kit
-Summary(pl.UTF-8):   GNU MIX Development Kit - zestaw programistyczny dla języka MIXAL
+Summary(pl.UTF-8):	GNU MIX Development Kit - zestaw programistyczny dla języka MIXAL
 Name:		mdk
 Version:	1.2.3
 Release:	0.1
