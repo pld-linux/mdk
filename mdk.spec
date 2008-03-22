@@ -2,21 +2,27 @@
 Summary:	GNU MIX Development Kit
 Summary(pl.UTF-8):	GNU MIX Development Kit - zestaw programistyczny dla języka MIXAL
 Name:		mdk
-Version:	1.2.3
+Version:	1.2.4
 Release:	0.1
 License:	GPL v2
 Group:		Applications
-Source0:	http://ftp.gnu.org/gnu/mdk/v1.2.3/%{name}-%{version}.tar.gz
-# Source0-md5:	1c74ec62c847792706be412289c8152b
+Source0:	http://ftp.gnu.org/gnu/mdk/v%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	a1dd320fa5f8a791db7e66155200ee55
+Patch0:		%{name}-pmake.patch
 URL:		http://www.gnu.org/software/mdk/mdk.html
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	gettext-devel >= 0.14
 BuildRequires:	glib2-devel >= 2.0
 BuildRequires:	guile-devel
+BuildRequires:	intltool >= 0.30
+BuildRequires:	libglade2-devel >= 2.0.0
 BuildRequires:	pkgconfig
 BuildRequires:	readline-devel
 # for GUI
-BuildRequires:	gtk+2-devel >= 2:2.4.0
-BuildRequires:	libglade2-devel >= 2.0.0
-BuildRequires:	pango-devel >= 1.4
+BuildRequires:	gtk+2-devel >= 2:2.6.0
+BuildRequires:	libglade2-devel >= 1:2.0.0
+BuildRequires:	pango-devel >= 1:1.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -49,10 +55,18 @@ Emacsa.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
+%{__gettextize}
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure
 %{__make}
+
 ln -s doc/img
 %{__make} -C doc html
 
@@ -68,15 +82,22 @@ rm img/Makefile*
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p	/sbin/postshell
+%post	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun	-p	/sbin/postshell
+%postun	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc doc/mdk.html doc/img AUTHORS ChangeLog NEWS README THANKS TODO
-%attr(755,root,root) %{_bindir}/*
-%{_datadir}/%{name}
-%{_infodir}/*.info*
+%attr(755,root,root) %{_bindir}/gmixvm
+%attr(755,root,root) %{_bindir}/mixasm
+%attr(755,root,root) %{_bindir}/mixguile
+%attr(755,root,root) %{_bindir}/mixvm
+%dir %{_datadir}/%{name}
+%{_datadir}/%{name}/mixal-mode.el
+%{_datadir}/%{name}/mixvm.el
+%{_datadir}/%{name}/mixguile*.scm
+%{_datadir}/%{name}/mixgtk.glade
+%{_infodir}/mdk.info*
