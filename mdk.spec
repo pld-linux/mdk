@@ -12,7 +12,7 @@ Patch0:		%{name}-pmake.patch
 URL:		http://www.gnu.org/software/mdk/mdk.html
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gettext-devel >= 0.14
+BuildRequires:	gettext-tools >= 0.14
 BuildRequires:	glib2-devel >= 2.0
 BuildRequires:	guile-devel
 BuildRequires:	intltool >= 0.30
