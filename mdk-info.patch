@@ -1,0 +1,14 @@
+--- mdk-1.2.11/doc/mdk.texi.orig	2015-12-23 19:36:36.000000000 +0100
++++ mdk-1.2.11/doc/mdk.texi	2020-10-18 19:23:14.597332901 +0200
+@@ -37,9 +37,9 @@
+ @end quotation
+ @end copying
+ 
+-@dircategory GNU programming tools
++@dircategory Programming tools:
+ @direntry
+-* MDK: (mdk).           The GNU MIX Development Kit.
++* MDK: (mdk).				The GNU MIX Development Kit
+ @end direntry
+ 
+ 

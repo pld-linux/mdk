@@ -1,0 +1,30 @@
+--- mdk-1.2.11/configure.ac.orig	2020-10-15 21:58:38.000000000 +0200
++++ mdk-1.2.11/configure.ac	2020-10-18 18:32:15.247240156 +0200
+@@ -41,7 +41,7 @@
+ 
+ dnl i18n stuff
+ AM_GNU_GETTEXT_VERSION(0.14)
+-AM_GNU_GETTEXT
++AM_GNU_GETTEXT([external])
+ AC_PROG_INTLTOOL([0.37], [no-xml])
+ 
+ GETTEXT_PACKAGE=mdk
+@@ -162,7 +162,6 @@
+ samples/Makefile
+ samples/tests/Makefile
+ po/Makefile.in
+-intl/Makefile
+ ])
+ 
+ AC_OUTPUT
+--- mdk-1.2.11/Makefile.am.orig	2015-11-16 23:32:29.000000000 +0100
++++ mdk-1.2.11/Makefile.am	2020-10-18 18:52:32.147314309 +0200
+@@ -12,7 +12,7 @@
+ 
+ EXTRA_DIST = config.rpath ABOUT-NLS intltool-extract.in intltool-merge.in \
+              autogen.sh intltool-update.in ChangeLog.1 ChangeLog.2
+-SUBDIRS = po intl doc lib mixlib mixguile mixutils mixgtk misc samples
++SUBDIRS = po doc lib mixlib mixguile mixutils mixgtk misc samples
+ 
+ distclean-local:
+ 	rm -f intltool-extract
