@@ -6,7 +6,7 @@ Summary:	GNU MIX Development Kit
 Summary(pl.UTF-8):	GNU MIX Development Kit - zestaw programistyczny dla języka MIXAL
 Name:		mdk
 Version:	1.2.11
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications
 Source0:	https://ftp.gnu.org/gnu/mdk/v%{version}/%{name}-%{version}.tar.gz
